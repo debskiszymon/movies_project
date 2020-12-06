@@ -1,6 +1,8 @@
 import requests
 import random
 import pytest
+import os
+API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
 API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MDgzYmFhYjNmYjI1YjFlOGEzNWZmMjBmNWNjMjUzOSIsInN1YiI6IjVmYTNjZTk2NDM0OTRmMDAzZTE3YTE0ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.djtejExijC0WjowuedMC3vD-YKoYYETrkAlkjhZONq0"
 
