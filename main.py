@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    selected_list = request.args.get('list_type', "now_playing")
+    selected_list = request.args.get('list_type', "popular")
     try:
         movies = tmdb_client.get_movies(how_many=8, list_type=selected_list)
     except:
-        movies = tmdb_client.get_movies(how_many=8, list_type="now_playing")
+        movies = tmdb_client.get_movies(how_many=8, list_type="popular")
     selected_movie = selected_list
     movie_lists = ["now_playing", "popular", "top_rated", "upcoming"]
     return render_template("homepage.html", movies=movies, movie_lists=movie_lists, selected_movie=selected_movie)
@@ -23,7 +23,7 @@ def homepage():
 def movie_details(movie_id):
     details = tmdb_client.get_single_movie(movie_id)
     cast = tmdb_client.get_cast(movie_id, how_many=4)
-    backdrops = tmdb_client.get_movie_images_backdrops(movie_id)
+    backdrops = tmdb_client.get_movie_images_backdrops(movie_id)['backdrops']
     backdrops = random.choice(backdrops)
     return render_template("movie_details.html", movie=details, cast=cast, backdrops=backdrops)
 
