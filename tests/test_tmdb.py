@@ -2,7 +2,7 @@ import pytest
 import tmdb_client
 from unittest.mock import Mock
 import requests
-from main import app
+from app import app
 
 def test_get_poster_url_uses_default_size():
    # Przygotowanie danych
