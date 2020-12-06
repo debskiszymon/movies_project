@@ -4,6 +4,7 @@ import pytest
 import os
 API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
+
 # def get_movies_list(list_type):
 #     endpoint = f"https://api.themoviedb.org/3/movie/{list_type}"
 #     headers = {
